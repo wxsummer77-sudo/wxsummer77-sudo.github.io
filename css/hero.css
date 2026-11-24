@@ -1,0 +1,135 @@
+.banri-hero {
+  --banri-ocean: #050F1F;
+  --banri-gold: #e1be7f;
+  --banri-ink: #101c2b;
+  --banri-type: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans CJK JP", "Meiryo", sans-serif;
+  isolation: isolate;
+  position: relative;
+  display: grid;
+  aspect-ratio: 1440 / 760;
+  width: 100%;
+  overflow: hidden;
+  color: #faf7ef;
+  font-family: var(--banri-type);
+  background: var(--banri-ocean);
+}
+.banri-hero, .banri-hero * { box-sizing: border-box; }
+.banri-hero .banri-hero__art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 0;
+}
+.banri-hero .banri-hero__art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.banri-hero .banri-hero__copy {
+  z-index: 1;
+  align-self: start;
+  justify-self: start;
+  position: relative;
+  margin: 5.7% 0 0 11%;
+  text-align: left;
+}
+.banri-hero .banri-hero__eyebrow {
+  margin: 0;
+  color: var(--banri-gold);
+  font: 600 clamp(10px, .77vw, 14px)/1.5 Arial, sans-serif;
+  letter-spacing: .27em;
+}
+.banri-hero .banri-hero__eyebrow span {
+  display: inline-block;
+  margin: 0 .49em;
+  color: #b18c50;
+  font-weight: 400;
+}
+.banri-hero .banri-hero__title {
+  margin: .45em 0 0;
+  color: #f8f5ed;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif CJK JP", serif;
+  font-size: clamp(34px, 3.8vw, 78px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: .026em;
+}
+.banri-hero .banri-hero__title span {
+  color: #eed49c;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: .075em;
+}
+.banri-hero .banri-hero__description {
+  margin: 0;
+  color: #c8d1d9;
+  font-size: clamp(13px, 1.03vw, 19px);
+  line-height: 1.8;
+  letter-spacing: .055em;
+}
+.banri-hero .banri-hero__description::before {
+  content: "";
+  display: block;
+  margin: clamp(15px, 1.32vw, 29px) 0;
+  width: clamp(38px, 3.6vw, 74px);
+  height: 1px;
+  background: linear-gradient(90deg, #d6b47c, transparent);
+}
+.banri-hero .banri-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  min-height: 44px;
+  margin-top: clamp(18px, 2.05vw, 37px);
+  padding: .74em 1.48em;
+  border: 1px solid #eee1c7;
+  box-shadow: 0 6px 22px rgb(0 0 0 / 14%);
+  background: linear-gradient(160deg, #faf7ef, #e9dcc0);
+  color: var(--banri-ink);
+  font: 700 clamp(13px, 1vw, 18px)/1.5 var(--banri-type);
+  letter-spacing: .04em;
+  text-decoration: none;
+}
+.banri-hero .banri-hero__cta span {
+  width: .46em;
+  height: .46em;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.banri-hero .banri-hero__cta:focus-visible {
+  outline: 2px solid #fbdfa6;
+  outline-offset: 5px;
+}
+@media (hover: hover) {
+  .banri-hero .banri-hero__cta:hover { background: #fff7e8; }
+}
+@media (max-width: 960px) and (min-width: 761px) {
+  .banri-hero .banri-hero__copy { margin-left: 6.5%; margin-top: 3.7%; }
+}
+@media (max-width: 760px) {
+  .banri-hero {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: auto;
+  }
+  .banri-hero .banri-hero__copy {
+    align-self: stretch;
+    margin: 0;
+    padding: clamp(29px, 8vw, 48px) clamp(20px, 6.15vw, 44px) 12px;
+  }
+  .banri-hero .banri-hero__eyebrow { font-size: 10px; letter-spacing: .23em; }
+  .banri-hero .banri-hero__title { font-size: clamp(28px, 7.2vw, 47px); margin-top: .48em; }
+  .banri-hero .banri-hero__description {
+    font-size: clamp(14px, 3.5vw, 17px);
+    letter-spacing: .015em;
+    line-height: 1.7;
+    text-wrap: pretty;
+  }
+  .banri-hero .banri-hero__description::before { margin: 14px 0 10px; width: 36px; }
+  .banri-hero .banri-hero__cta { margin-top: 17px; font-size: 14px; }
+  .banri-hero .banri-hero__art { position: relative; inset: auto; width: 100%; }
+  .banri-hero .banri-hero__art img { width: 100%; height: auto; aspect-ratio: 390 / 380; }
+}
